@@ -1,0 +1,19 @@
+background no
+out_to_console          yes
+out_to_x         no
+update_interval         1
+total_run_times         0
+short_units         yes
+pad_percents         2
+override_utf8_locale yes
+#use_spacer left
+#~${fs_used /}  \
+#s.${fs_used /data}  \
+# 
+TEXT
+${exec sleep 0.1}
+C$if_mpd_playing ♪${if_match ${execi 5 expr length "`mpc --format %artist% | head -n 1`"} >= 30}${scroll 30 3 ${mpd_artist}}${else}${mpd_artist}${endif} - ${if_match ${execi 5 expr length "`mpc --format %title% | head -n 1`"} >= 30}${scroll 30 3 ${mpd_title}}${else}${mpd_title}${endif}$endif  \
+${mem}  \
+@  ${cpu}%  \
+${time %a %d %b} ${time %H:%M}\
+

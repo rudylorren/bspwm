@@ -1,0 +1,50 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+!------------------------------------------------------------------------------
+! c o l o r -  s e t t i n g s
+
+*background: #131313
+*foreground: #969696
+
+! Default
+! 0: black
+*color0:  #000000
+*color8:  #191919
+! 1: red
+*color1:  #97130E
+*color9:  #DC6E18
+! 2: green
+*color2:  #285014
+*color10: #D0B020
+! 3: yellow
+*color3:  #785A1B
+*color11: #BC9458
+! 4: blue
+*color4:  #28435E
+*color12: #3073BB
+! 5: magenta
+*color5:  #702B5B
+*color13: #D349A8
+! 6: cyan
+*color6:  #247A7E
+*color14: #84C0C3
+! 7: white
+*color7:  #969696
+*color15: #BBBBBB
+
+
+
+!------------------------------------------------------------------------------
+! u r x v t
+
+!URxvt*geometry:         65x19 
+URxvt*font:            xft:Fira Mono OT:size=7
+URxvt*urlLauncher:         firefox  
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:        true
+URxvt*scrollColor:        #000000

@@ -1,0 +1,229 @@
+#
+# bspwm hotkeys
+#
+
+super + alt + Escape
+    pkill -x panel; bspc quit
+
+# Close current window
+super + x
+    bspc window -c
+
+# Monocle toggle
+super + t
+    bspc desktop -l next
+
+# Toggle pseudotiled (floating in tile)
+super + shift + t
+        bspc window -t pseudo_tiled
+
+#+ (lock|unlock) focused window
+super + p
+    bspc window --toggle locked
+
+# Balance layout
+super + b
+    bspc desktop -B
+
+#+ re-balance layout
+super + shift + m
+    bspc desktop --equalize && bspc window --swap biggest
+
+#+ flip layout
+super + {_,shift +} v
+    bspc desktop --flip {vertical,horizontal}
+
+# s - float / f - fullscreen
+super + {s,f}
+    bspc window -t {floating,fullscreen}
+
+# Focus next window
+super + {grave,Tab}
+    bspc {window,desktop} -f last
+
+# swap window with the last
+super + apostrophe
+    bspc window -s last
+
+# previous window in history
+super + {o,i}
+    bspc control --record-history off; \
+    bspc window {older,newer} -f; \
+    bspc control --record-history on
+
+super + y
+    bspc window -w last.manual
+
+# move current window to biggest spot
+super + m
+    bspc window -s biggest
+
+# move current window left,down,up,right
+super + {_,shift + }{h,j,k,l}
+    bspc window -{f,s} {left,down,up,right}
+
+# cycle windows
+super + {_,shift + }c
+    bspc window -f {next,prev}
+
+# cycle layout
+super + v
+    bspc cycle_layout
+
+# move window back and forth
+super + {comma,period}
+    bspc desktop -C {backward,forward}
+
+# change desktop left and right
+super + bracket{left,right}
+    bspc desktop -f {prev,next}
+
+# move focus left,down,up,right
+super + ctrl + {h,j,k,l}
+    bspc window -p {left,down,up,right}
+
+super + ctrl + {_,shift + }space
+    bspc {window -p cancel,desktop -c}
+
+# Resize window
+super + alt + {h,j,k,l}
+    bspc window -e {left -10,down +10,up -10,right +10}
+
+# Resize window
+super + alt + shift + {h,j,k,l}
+    bspc window -e {right -10,up +10,down -10,left +10}
+
+
+#+ manually split frame in direction
+super + {minus,shift + minus,shift + equal,equal}
+    bspc window --presel {left,down,up,right}
+
+# move floating windows
+super + {Left,Right,Up,Down}
+    xdo move {-x -20,-x +20,-y -20,-y +20}
+
+# resize floating windows
+super + alt + {Left,Right,Up,Down}
+    xdo resize {-w -20,-w +20,-h -20,-h +20}
+# 
+super + ctrl + {1-9}
+    bspc window -r 0.{1-9}
+
+# go (Shift=move) to desktop #
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,window -d} ^{1-9,10}
+
+# left click to focus
+~button1
+    bspc pointer -g focus
+
+# left click move right resize
+super + button{1-3}
+    bspc pointer -g {move,resize_side,resize_corner}
+
+super + !button{1-3}
+    bspc pointer -t %i %i
+
+super + @button{1-3}
+    bspc pointer -u
+
+super + button{4-5}
+    bspc desktop -f {prev,next}
+
+# change window gap at run time
+super + ctrl + minus
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` + 5 ))
+
+super + ctrl + shift + minus
+    bspc config top_padding 15; bspc config -d focused window_gap 15
+
+super + ctrl + equal
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` - 5 ))
+
+super + ctrl + shift + equal
+    bspc config top_padding 15; bspc config -d focused window_gap 0
+
+# wm independent hotkeys
+#
+
+super + Return
+    termite
+    
+super + shift + Return
+	urxvt
+
+super + space
+    dmenu_run -dim 0.4 -h 24 -fn 'Amble-10' -l 31 -w 200 -p ? -nb '#101010' -nf '#949494' -sb '#91291D' -sf '#eeeeee'
+
+super + z
+	gmrun
+	
+super + q
+	hexchat
+	
+super + w
+	firefox
+	
+super + e
+	leafpad
+	
+super + shift + e
+	gksu geany
+	
+super + n
+	termite -e 'ncmpcpp'
+	
+super + shift + f
+	gksu thunar
+	
+super + ctrl + f
+	thunar
+
+super + shift + a
+	gksu sunflower
+	
+super + a
+	sunflower
+
+super + r
+	calibre
+		
+Print
+	xfce4-screenshooter -u
+		
+XF86AudioRaiseVolume
+    amixer -q set Master 2%+ unmute
+
+XF86AudioLowerVolume
+    amixer -q set Master 2%- unmute
+        
+XF86AudioMute
+    amixer -q set Master mute
+        
+XF86AudioPlay
+	ncmpcpp toggle
+	 
+XF86AudioStop
+	ncmpcpp stop
+
+XF86AudioPrev
+	ncmpcpp prev
+
+XF86AudioNext
+	ncmpcpp next
+
+super + ctrl + z
+	ncmpcpp toggle
+
+super + ctrl + x
+	ncmpcpp prev
+
+super + ctrl + c
+	ncmpcpp next
+	
+super + F1	
+	xlock -mode matrix
+	
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd

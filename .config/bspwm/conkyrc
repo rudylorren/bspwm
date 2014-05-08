@@ -9,11 +9,12 @@ override_utf8_locale yes
 #use_spacer left
 #~${fs_used /}  \
 #s.${fs_used /data}  \
-# 
+# ${mem} \
+#@ ${cpu}%  
 TEXT
 ${exec sleep 0.1}
-C$if_mpd_playing ♪${if_match ${execi 5 expr length "`mpc --format %artist% | head -n 1`"} >= 30}${scroll 30 3 ${mpd_artist}}${else}${mpd_artist}${endif} - ${if_match ${execi 5 expr length "`mpc --format %title% | head -n 1`"} >= 30}${scroll 30 3 ${mpd_title}}${else}${mpd_title}${endif}$endif  \
-${mem}  \
-@  ${cpu}%  \
+C$if_mpd_playing ♪ ${if_match ${execi 5 expr length "`mpc --format %title% | head -n 1`"} >= 30}${scroll 30 3 ${mpd_title}}${else}${mpd_title}${endif} - ${if_match ${execi 5 expr length "`mpc --format %artist% | head -n 1`"} >= 30}${scroll 30 3 ${mpd_artist}}${else}${mpd_artist}${endif} |$endif \
+Vol: ${exec amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p'| uniq}% | \
+${battery_short BAT0} | \
 ${time %a %d %b} ${time %H:%M}\
 

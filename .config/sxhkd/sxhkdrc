@@ -135,25 +135,28 @@ super + ctrl + minus
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` + 5 ))
 
 super + ctrl + shift + minus
-    bspc config top_padding 15; bspc config -d focused window_gap 15
+    bspc config top_padding 15; bspc config -d focused window_gap 13
 
 super + ctrl + equal
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` - 5 ))
 
 super + ctrl + shift + equal
-    bspc config top_padding 15; bspc config -d focused window_gap 0
+    bspc config top_padding 13; bspc config -d focused window_gap 0
+
+ctrl + space   
+    bspc config -d focused window_gap {-1,13,65}
 
 # wm independent hotkeys
 #
 
 super + Return
-    termite
+        urxvtc
     
 super + shift + Return
-	urxvt
+	urxvtc -name 'floaterm'
 
 super + space
-    dmenu_run -dim 0.4 -h 24 -fn 'Amble-10' -l 31 -w 200 -p ? -nb '#101010' -nf '#949494' -sb '#91291D' -sf '#eeeeee'
+    	dmenu_run -p 'choose one...' -fn '-*-tamsyn-medium-*-*-*-17-*-*-*-*-*-*-*' -nb '#090909' -nf '#969696' -sb '#cccccc' -sf '#090909'
 
 super + z
 	gmrun
@@ -171,25 +174,19 @@ super + shift + e
 	gksu geany
 	
 super + n
-	termite -e 'ncmpcpp'
+	urxvtc -e 'ncmpcpp'
 	
 super + shift + f
-	gksu thunar
+	gksu spacefm
 	
 super + ctrl + f
-	thunar
-
-super + shift + a
-	gksu sunflower
-	
-super + a
-	sunflower
+	spacefm
 
 super + r
 	calibre
 		
 Print
-	xfce4-screenshooter -u
+	scrot
 		
 XF86AudioRaiseVolume
     amixer -q set Master 2%+ unmute
@@ -212,13 +209,13 @@ XF86AudioPrev
 XF86AudioNext
 	ncmpcpp next
 
-super + ctrl + z
+super + shift + z
 	ncmpcpp toggle
 
-super + ctrl + x
+super + shift + x
 	ncmpcpp prev
 
-super + ctrl + c
+super + shift + c
 	ncmpcpp next
 	
 super + F1	

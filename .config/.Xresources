@@ -1,50 +1,59 @@
-Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
+URxvt*depth: 32
+URxvt*buffered: on
+URxvt*geometry: 75x20
+URxvt*font: xft:Fira Mono OT:regular:size=8
+URxvt*boldItalicFont:Fira Mono OT:regular:size=8
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintslight
+Xft.hinting: 1
+Xft.antialias: 1
 Xft.rgba: rgb
-Xft.autohint: false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
-!------------------------------------------------------------------------------
-! c o l o r -  s e t t i n g s
 
-*background: #131313
+
+!URxvt*font: -*-tamsyn-medium-*-*-*-15-*-*-*-*-*-*-*
+!URxvt*boldItalicFont: -*-tamsyn-medium-*-*-*-15-*-*-*-*-*-*-*
+!URxvt*font:-*-dina-medium-r-*-*-10-*-*-*-*-*-*-*
+!URxvt*boldItalicFont:-*-dina-medium-r-*-*-10-*-*-*-*-*-*-*
+URxvt*scrollBar: False
+URxvt*saveLines: 99999
+URxvt*pointerBlank: True
+URxvt.letterSpace: -1
+URxvt*colorn: #76844A
+URxvt*perl-ext-common: default,url-select,clipboard,matcher
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox -new-tab
+URxvt.url-select.underline: true
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.M-c:     perl:clipboard:copy
+URxvt.keysym.M-v:     perl:clipboard:paste
+URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
+
+*background: #090909
 *foreground: #969696
 
-! Default
-! 0: black
-*color0:  #000000
-*color8:  #191919
-! 1: red
-*color1:  #97130E
-*color9:  #DC6E18
-! 2: green
-*color2:  #285014
-*color10: #D0B020
-! 3: yellow
-*color3:  #785A1B
-*color11: #BC9458
-! 4: blue
-*color4:  #28435E
-*color12: #3073BB
-! 5: magenta
-*color5:  #702B5B
-*color13: #D349A8
-! 6: cyan
-*color6:  #247A7E
-*color14: #84C0C3
-! 7: white
+! Black (not tango) + DarkGrey
+*color0:  #090909
+*color8:  #2d2d2d
+! DarkRed + Red
+*color1:  #6f2522
+*color9:  #9e2c26
+! DarkGreen + Green
+*color2:  #3c472b
+*color10: #597630
+! DarkYellow + Yellow
+*color3:  #62542b
+*color11: #b79326
+! DarkBlue + Blue
+*color4:  #2f3146
+*color12: #454975
+! DarkMagenta + Magenta
+*color5:  #352646
+*color13: #5e4679
+!DarkCyan + Cyan (both not tango)
+*color6:  #263b46
+*color14: #487084
+! LightGrey + White
 *color7:  #969696
-*color15: #BBBBBB
+*color15: #cccccc
 
-
-
-!------------------------------------------------------------------------------
-! u r x v t
-
-!URxvt*geometry:         65x19 
-URxvt*font:            xft:Fira Mono OT:size=7
-URxvt*urlLauncher:         firefox  
-URxvt*scrollBar:        false
-URxvt*scrollBar_right:        true
-URxvt*scrollColor:        #000000

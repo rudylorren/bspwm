@@ -25,7 +25,7 @@ case "$flavor" in
         ;;
     dzen2)
         . panel_colors
-        FONT_FAMILY='amble'
+        FONT_FAMILY='Amble'
         FONT_SIZE=11
         cat "$PANEL_FIFO" | /home/rudy/.config/bspwm/panel_dzen2 -f "$FONT_FAMILY" -s "$FONT_SIZE" | dzen2 -h $PANEL_HEIGHT -dock -ta l -title-name panel -fn "${FONT_FAMILY}:pixelsize=${FONT_SIZE}" -fg "$COLOR_FOREGROUND" -bg "$COLOR_BACKGROUND" &
         ;;

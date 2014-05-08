@@ -1,19 +1,5 @@
-
-    /*
-     * Edit this file and copy it as userChrome.css into your ff profile
-     */
-     
-    /*
-     * This file can be used to customize the look of Mozilla's user interface
-     * You should consider using !important on rules which you want to
-     * override default settings.
-     */
-     
-    /*
-     * Do not remove the @namespace line -- it's required for correct functioning
-     */
     @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
-        
+      
 	/* Autohide bookmark toolbar */
 	#PersonalToolbar {
 		visibility: collapse !important;
@@ -21,8 +7,9 @@
 
 	#navigator-toolbox:hover > #PersonalToolbar {
 		visibility: visible !important;
+		margin-top: -8px !important;
+  		margin-bottom: -8px !important;
 	}
-   
     /* Kill bookmark icons in the Personal Toolbar */
     toolbarbutton.bookmark-item > .toolbarbutton-icon {
       display: none;
@@ -33,97 +20,46 @@
       display: none;
     }
      
-    /*Remove the throbber */
-    #throbber-box {
-		display: none !important;
-    }
-       
-	/* Remove extra padding from the Navigation Bar */
-	.toolbarbutton-1, .toolbarbutton-menubutton-button {
-		padding: 2px 3px !important;
-	}
-	.toolbarbutton-1[checked=”true”], .toolbarbutton-1[open=”true”],
-	.toolbarbutton-menubutton-button[checked=”true”],
-	.toolbarbutton-menubutton-button[open=”true”] {
-		padding: 4px 1px 1px 4px !important; }
-
     #urlbar {
-        height: 18px;
+        height: 10px;
     }
     #searchbar {
-        height: 18px;
+        height: 10px;
     }
   	
+/* Tab bar */
 
-    #tabbrowser-tabs {
-            background-image: none !important;
-            background-color: shade(#131313, 0.68) !important;
-            padding-top: 3px !important;
+#TabsToolbar {
+  -moz-appearance: none !important;
+  height: 23px !important;
+  min-height: 18px !important;
+ /* margin-top: -4px !important;*/
+  margin-bottom: -2px !important;
+  background: transparent !important;
+  border: 0 !important;*/
+}
+    toolbarbutton.tab-item > .toolbarbutton-icon {
+      display: none;
     }
-     
-     
-    .tabbrowser-tab {
-            -moz-appearance: none !important;
-            background-image: none !important;
-            border: 0px !important;
-            border-top-left-radius: 0px !important;
-            border-top-right-radius: 0px !important;
-            padding-left: 5px !important;
-            padding-right: 5px !important;
-            margin: 0 2px 0 0 !important;
-    }
-     
-    .tabbrowser-tab[selected="true"] {
-            background-color: #282828 !important;
-            color: #969696 !important;
-            minimum-height: 12px !important;
-            maximum-height: 12px !important;
-            padding-bottom: 3px !important;
-    }
-     
-    .tabbrowser-tab:not([selected="true"]) {
-            background-color: #191919 !important;
-            color: #666666 !important;
-     
-    }
-     
-    .tabs-newtab-button {
-            -moz-appearance: none !important;
-            background-image: none !important;
-            background-color: #131313 !important;
-            border: 0px !important;
-            border-top-left-radius: 0px !important;
-            border-top-right-radius: 0px !important;
-            padding-left: 5px !important;
-            padding-right: 5px !important;
-    }
-     
-    .tabs-newtab-button:hover {
-            background-color: #191919 !important;
-    }
-     
-    .tabs-newtab-button:active {
-            background-color: #131313 !important;
-            color: #666666 !important;
-    }
-     
-    #nav-bar {
-            background-image: none !important;
-            background-color: #131313 !important;
-    }
-    
-    .button-box .button-icon {
-    display: none;
-    }
-    
-    /* Remove Back button when there’s nothing to go Back to */
-    #back-button[disabled="true"] { display: none; }
 
-    /* Remove Stop button when there’s nothing to Stop */
-    #stop-button[disabled="true"] { display: none; }
-    
-    /* Remove Home button (never use it) */
-    #home-button { display: none; }
-   
-    /* Remove the Bookmark Star */
-    #star-button { display: none !important; }
+
+.titlebar-placeholder, #titlebar-buttonbox-container #titlebar-buttonbox {display:none!important;}
+/*Frank Icon and Text Mode....
+.toolbarbutton-text {
+   display: -moz-box !important;
+}   
+*/ /*Frank Text Only Mode....*/ /*    .toolbarbutton-text { display: -moz-box !important; }   .toolbarbutton-icon {
+       display : none !important;}
+*/
+/*Frank Small Icon Mode...*/
+#back-button > .toolbarbutton-icon {
+  border-radius: 0px !important;
+  -moz-image-region: rect(0, 54px, 18px, 36px) !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+osearchbar er-tabs {max-height : 10px !important;}
+.tab-content,.tabs-newtab-button { margin-bottom: 5px !important;} 
+
+autocomplete-textbox::-moz-placeholder,#urlbar .autocomplete-textbox::-moz-placeholder {  color: transparent !important; }

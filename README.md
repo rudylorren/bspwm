@@ -5,8 +5,6 @@ My bspwm configs.
 
 included:
 
--gtk theme - ElementaryDark(green edit)
-
 -bspwmrc
 
 -panel w/dzen2
@@ -14,8 +12,6 @@ included:
 -ncmpcpp config
 
 -sxhkdrc
-
--termite config
 
 -.Xresources
 

@@ -1,0 +1,60 @@
+" ==Vimperator_Color_Scheme==
+" name: Darkness
+" ==Darkness_Colorscheme_Settings==
+
+"StatusLine settings
+hi StatusLine color: #a7a7a7; background: #090909; font-size: 7pt;
+
+"CmdLine settings excluding Gradient
+hi Normal color: #b09254; background: #090909; font-size: 7pt;
+hi CmdLine background: #090909; color: #a7a7a7; font-size: 7pt;
+hi CompDesc color: #766782; width: 50%; font-size: 7pt;
+hi CompIcon width: 0px; min-width: 0px; visibility: hidden; display: inline-block; margin-right: .5ex;
+hi CompItem[selected] background: #a7a7a7; color: #090909;
+hi CompMsg font-style: italic; margin-left: 7px;
+hi CompResult width: 45%; overflow: hidden;font-size: 7pt; font-family: Fira Mono OT; font-weight: normal;
+hi CompTitle color: #6d6a64; background: #090909;
+hi CompTitle>* padding: 0 .5ex;
+hi Filter color: #afafaf;
+
+"Used with ]f and [f
+hi FrameIndicator background-color: #3f3f3f; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+
+hi Bell border: 0 none; background-color: #090909;
+hi ErrorMsg color: #722222; background: #090909;
+
+
+"Hint section
+"rgba(0,0,0,0.8)"
+hi Hint font-family: aller; font-size: 14px; color: #cccccc; background-color: #090909; border: solid 1px #B09254;
+hi Hint::after content: attr(number);
+hi HintActive background-color: rgba(0,0,0,0.5);
+hi HintElem 0;
+hi HintImage opacity: .5;
+
+"Other important stuff
+hi InfoMsg color: #a7a7a7; background: #090909;
+hi Message white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+hi WarningMsg color: #622E2E; background: #090909;
+hi ModeMsg color: #b09254; background: #090909; "CmdLine when Not in Use
+hi MoreMsg color: #a7a7a7; background: #090909;
+hi NonText color: lightblue; min-height: 16px; padding-left: 2px;
+hi Question color: #a7a7a7; background: #090909;
+hi Function color: #B09254; background: #090909;
+hi Number color: #B09254; background: #090909;
+hi String color: #b09254; background: #090909;
+hi Tag color: #a7a7a7; background: #090909;
+hi Title color: #a7a7a7; background: #090909;
+hi URL text-decoration: none; color: lightblue; background: inherit;
+hi URL:hover text-decoration: underline; cursor: pointer;
+hi LineNr color: #a7a7a7; background: #090909;
+
+hi ContentSeparator border-top: 0px;
+
+"For other descriptions of each item, please see ``Styling'' section included with Vimperator
+
+hi CmdLine>* font-family: Fira Mono OT
+hi CompDesc font-family: Fira Mono OT
+hi CompResult font-family: Fira Mono OT
+hi StatusLine font-family: Fira Mono OT
+hi PromptText width: 0px 

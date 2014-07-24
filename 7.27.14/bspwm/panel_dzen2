@@ -2,7 +2,7 @@
 #
 # Example panel for dzen2
 
-font_family='Droid Sans'
+font_family='terminus'
 font_size=11
 
 . /home/rudy/.config/bspwm/panel_colors

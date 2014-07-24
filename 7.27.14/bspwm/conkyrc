@@ -6,10 +6,15 @@ total_run_times         0
 short_units         yes
 pad_percents         2
 override_utf8_locale yes
-
+#use_spacer left
+#~${fs_used /}  \
+#s.${fs_used /data}  \
+# ${mem} \
+#@ ${cpu}%   ♪ 
+#Vol: ${exec amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p'| uniq}% | \
 TEXT
 ${exec sleep 0.1}
-C$if_mpd_playing ♪ ${mpd_smart} |$endif \
-${battery_short BAT0} | \
+C$if_mpd_playing ${mpd_smart} |$endif\
+${battery_short BAT0}| \
 ${time %a %d %b} ${time %H:%M}\
 
